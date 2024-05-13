@@ -52,9 +52,8 @@ nav a {
 }
 
 .menu-gallery img {
-    width: 200px; /* Adjust size as needed */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu-section {
