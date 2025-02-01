@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: Arial, sans-serif;
     color: #564946;
@@ -84,4 +87,28 @@ footer {
     background-color: #564946;
     color: #F5F3F7;
     padding:0.5rem;
+}
+.back-to-top {
+    position: fixed;
+    /* Position it fixed to the viewport */
+    bottom: 30px;
+    right: 30px;
+
+    background-color: #564946;
+    color: #F5F3F7;
+    text-decoration: none;
+    padding: 10px 15px;
+
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+
+    /* Make it hidden by default */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.back-to-top.show {
+    display: inline-block;
+    opacity: 1;
 }
