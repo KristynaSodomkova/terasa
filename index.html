@@ -13,11 +13,29 @@
     </header>
     <img src="images/logo.jpg" alt="Logo Terasa" class="logo">
     <nav>
-        <a href="#about">O nás</a>
-        <a href="#menu">Menu</a>
-        <a href="#cakes">Dorty</a>
-        <a href="#contact">Kontakt</a>
-    </nav>
+  <ul class="main-menu">
+    <li><a href="#about">O nás</a></li>
+    <li class="dropdown">
+      <a href="#menu" class="dropdown-toggle">Menu</a>
+      <ul class="dropdown-menu">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#coffee">Výběrová káva</a></li>
+        <li><a href="#drinks">Nápoje</a></li>
+        <li><a href="#desserts">Kvalitní zákusky</a></li>
+        <li><a href="#brunches">Brunch a polévky</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#cakes" class="dropdown-toggle">Dorty</a>
+      <ul class="dropdown-menu">
+          <li><a href="#cakes">Dorty</a></li>
+        <li><a href="#painted-cakes">Ručně malované a modelované dorty</a></li>
+        <li><a href="#wedding-cakes">Svatební a vícepatrové dorty</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+</nav>
     <div class="container">
         <section id="about" class="section">
             <h2 class="section-heading">O nás</h2>
@@ -123,6 +141,30 @@
                 backToTop.classList.remove("show");
             }
         });
+    </script>
+    <script>
+      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+      dropdownToggles.forEach((toggle) => {
+        toggle.addEventListener('click', (event) => {
+          event.preventDefault();
+
+          const parentLi = toggle.closest('.dropdown');
+          parentLi.classList.toggle('open');
+
+          document.querySelectorAll('.dropdown.open').forEach((other) => {
+            if (other !== parentLi) other.classList.remove('open');
+          });
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!event.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown.open').forEach((openDropdown) => {
+            openDropdown.classList.remove('open');
+          });
+        }
+      });
     </script>
 </body>
 </html>
