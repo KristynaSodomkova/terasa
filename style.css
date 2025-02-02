@@ -9,6 +9,15 @@ body {
     padding: 0;
     text-align: center;
 }
+.logo {
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    width: 10%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
 header {
     padding: 20px;
 }
@@ -95,10 +104,6 @@ nav a {
         max-width: 400px;
     }
 
-    /*
-       Now flip the order for sections that have text first in HTML
-       (#drinks, #brunches, #painted-cakes), so the <img> appears on top.
-    */
     #drinks img,
     #brunches img,
     #wedding-cakes img {
